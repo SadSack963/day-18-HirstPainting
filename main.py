@@ -18,6 +18,9 @@
 # print(color_list)
 # print(len(color_list))
 
+from turtle import Turtle, Screen
+from random import choice
+
 color_list = [
     (193, 160, 121), (72, 92, 125), (141, 87, 59), (141, 160, 187), (216, 209, 121), (29, 33, 47),
     (182, 146, 162), (55, 32, 23), (175, 160, 42), (120, 75, 93), (139, 172, 152), (62, 29, 38),
@@ -26,3 +29,35 @@ color_list = [
     (164, 208, 187), (177, 186, 214), (219, 207, 10), (48, 73, 62), (40, 74, 81), (179, 197, 201),
     (112, 132, 141)
 ]
+
+# Get painting grid parameters
+dot_size = int(input("dot size : "))
+dot_spacing = int(input("dot spacing : "))
+x_grid = int(input("x-axis number of dots : "))
+y_grid = int(input("y-axis number of dots : "))
+
+# Screen setup
+s = Screen()
+s.colormode(255)
+s.delay(0)  # fast animation
+# The screensize() method sets the amount of area the turtle can roam,
+# but doesn't change the screen size (despite the name), just the scrollable area.
+# s.screensize(dot_spacing * (x_grid + 2), dot_spacing * (y_grid + 2))
+s.setup(dot_spacing * (x_grid + 2), dot_spacing * (y_grid + 2))
+s.setworldcoordinates(-dot_spacing, -dot_spacing, dot_spacing * (x_grid + 1), dot_spacing * (y_grid + 1))
+# print(s.screensize())
+
+# Turtle setup
+t = Turtle()
+t.speed(0)  # fastest turtle speed
+t.pu()
+
+
+# Draw dot pattern (10 x 10)
+for y in range(0, dot_spacing * y_grid + 1, dot_spacing):
+    for x in range(0, dot_spacing * x_grid + 1, dot_spacing):
+        t.setposition(x, y)
+        t.dot(dot_size, choice(color_list))
+t.hideturtle()
+
+s.exitonclick()
