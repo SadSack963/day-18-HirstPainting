@@ -33,8 +33,8 @@ color_list = [
 # Get painting grid parameters
 dot_size = int(input("dot size : "))
 dot_spacing = int(input("dot spacing : "))
-x_grid = int(input("x-axis number of dots : ")) - 1
-y_grid = int(input("y-axis number of dots : ")) - 1
+x_grid = int(input("x-axis number of dots : "))
+y_grid = int(input("y-axis number of dots : "))
 
 # Screen setup
 s = Screen()
@@ -43,8 +43,8 @@ s.delay(0)  # fast animation
 # The screensize() method sets the amount of area the turtle can roam,
 # but doesn't change the screen size (despite the name), just the scrollable area.
 # s.screensize(dot_spacing * (x_grid + 2), dot_spacing * (y_grid + 2))
-s.setup(dot_spacing * (x_grid + 2), dot_spacing * (y_grid + 2))
-s.setworldcoordinates(-dot_spacing, -dot_spacing, dot_spacing * (x_grid + 1), dot_spacing * (y_grid + 1))
+s.setup(dot_spacing * (x_grid + 1), dot_spacing * (y_grid + 1))
+s.setworldcoordinates(-dot_spacing, -dot_spacing, dot_spacing * x_grid, dot_spacing * y_grid)
 # print(s.screensize())
 
 # Turtle setup
@@ -54,8 +54,8 @@ t.pu()
 
 
 # Draw dot pattern (10 x 10)
-for y in range(0, dot_spacing * y_grid + 1, dot_spacing):
-    for x in range(0, dot_spacing * x_grid + 1, dot_spacing):
+for y in range(0, dot_spacing * y_grid, dot_spacing):
+    for x in range(0, dot_spacing * x_grid, dot_spacing):
         t.setposition(x, y)
         t.dot(dot_size, choice(color_list))
 t.hideturtle()
