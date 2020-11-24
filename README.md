@@ -1,7 +1,8 @@
 <H1>Hirst Painting</H1>
 
 <H2>Turtle Graphics in Python</H2>
-I used code to filter out shades of light and dark colours from the extracted colours prior to pasting the RGB list. 
+I used code to filter out shades of light and dark colours from the extracted colours prior to pasting the RGB list.
+<p>
 <p>
 I get inputs from the user for dot size, spacing, number of dots in x and y axis. Then I size the screen appropriately to correctly centre the grid.
 <p>
