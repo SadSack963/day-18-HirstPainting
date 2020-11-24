@@ -33,8 +33,8 @@ color_list = [
 # Get painting grid parameters
 dot_size = int(input("dot size : "))
 dot_spacing = int(input("dot spacing : "))
-x_grid = int(input("x-axis number of dots : "))
-y_grid = int(input("y-axis number of dots : "))
+x_grid = int(input("x-axis number of dots : ")) - 1
+y_grid = int(input("y-axis number of dots : ")) - 1
 
 # Screen setup
 s = Screen()
