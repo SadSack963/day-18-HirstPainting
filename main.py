@@ -42,7 +42,7 @@ s.colormode(255)
 s.delay(0)  # fast animation
 # The screensize() method sets the amount of area the turtle can roam,
 # but doesn't change the screen size (despite the name), just the scrollable area.
-# s.screensize(dot_spacing * (x_grid + 2), dot_spacing * (y_grid + 2))
+# s.screensize(dot_spacing * (x_grid + 1), dot_spacing * (y_grid + 1))
 s.setup(dot_spacing * (x_grid + 1), dot_spacing * (y_grid + 1))
 s.setworldcoordinates(-dot_spacing, -dot_spacing, dot_spacing * x_grid, dot_spacing * y_grid)
 # print(s.screensize())
